@@ -24,19 +24,19 @@ public class MovementControler : MonoBehaviour
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
-        activeSpriteRenderer = spriterendererDown;
+        activeSpriteRenderer = spriteRendererDown;
     }
 
     private void Update()
     {
         if (Input.GetKey(inputUp)) {
-            SetDirection(Vector2.up, spriterendererUp);
+            SetDirection(Vector2.up, spriteRendererUp);
         } else if (Input.GetKey(inputDown)) {
-            SetDirection(Vector2.down, spriterendererDown);
+            SetDirection(Vector2.down, spriteRendererDown);
         } else if (Input.GetKey(inputLeft)) {
-            SetDirection(Vector2.left, spriterendererLeft);
+            SetDirection(Vector2.left, spriteRendererLeft);
         } else if (Input.GetKey(inputRight)) {
-            SetDirection(Vector2.right, spriterendererRight);
+            SetDirection(Vector2.right, spriteRendererRight);
         } else {
             SetDirection(Vector2.zero, activeSpriteRenderer);
         }
@@ -54,10 +54,10 @@ public class MovementControler : MonoBehaviour
     {
         direction = newDirection;
 
-        spriterendererUp.enabled = spriteRenderer == spriterendererUp;
-        spriterendererDown.enabled = spriteRenderer == spriterendererDown;
-        spriterendererLeft.enabled = spriteRenderer == spriterendererLeft;
-        spriterendererRight.enabled = spriteRenderer == spriterendererRight;
+        spriteRendererUp.enabled = spriteRenderer == spriteRendererUp;
+        spriteRendererDown.enabled = spriteRenderer == spriteRendererDown;
+        spriteRendererLeft.enabled = spriteRenderer == spriteRendererLeft;
+        spriteRendererRight.enabled = spriteRenderer == spriteRendererRight;
 
         activeSpriteRenderer = spriteRenderer;
         activeSpriteRenderer.idle = direction == Vector2.zero;
@@ -75,10 +75,10 @@ public class MovementControler : MonoBehaviour
         enabled = false;
         GetComponent<BombController>().enabled = false;
 
-        spriterendererUp.enabled = false;
-        spriterendererDown.enabled = false;
-        spriterendererLeft.enabled = false;
-        spriterendererRight.enabled = false;
+        spriteRendererUp.enabled = false;
+        spriteRendererDown.enabled = false;
+        spriteRendererLeft.enabled = false;
+        spriteRendererRight.enabled = false;
         spriteRendererDeath.enabled = true;
 
         Invoke(nameof(OnDeathSequenceEnded), 1.25f);

@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 330741377}
   - component: {fileID: 330741378}
   - component: {fileID: 330741379}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -324,7 +324,7 @@ GameObject:
   - component: {fileID: 582601642}
   - component: {fileID: 582601644}
   - component: {fileID: 582601643}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Death
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2551,7 +2551,7 @@ GameObject:
   - component: {fileID: 797705732}
   - component: {fileID: 797705733}
   - component: {fileID: 797705734}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3578,7 +3578,7 @@ GameObject:
   - component: {fileID: 1421566107}
   - component: {fileID: 1421566108}
   - component: {fileID: 1421566109}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3684,7 +3684,7 @@ GameObject:
   - component: {fileID: 1636330683}
   - component: {fileID: 1636330684}
   - component: {fileID: 1636330685}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3840,7 +3840,7 @@ GameObject:
   - component: {fileID: 2102930386}
   - component: {fileID: 2102930392}
   - component: {fileID: 2102930391}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3864,10 +3864,11 @@ MonoBehaviour:
   inputDown: 115
   inputLeft: 97
   inputRight: 100
-  spriterendererUp: {fileID: 330741379}
-  spriterendererDown: {fileID: 797705734}
-  spriterendererLeft: {fileID: 1636330685}
-  spriterendererRight: {fileID: 1421566109}
+  spriteRendererUp: {fileID: 330741379}
+  spriteRendererDown: {fileID: 797705734}
+  spriteRendererLeft: {fileID: 1636330685}
+  spriteRendererRight: {fileID: 1421566109}
+  spriteRendererDeath: {fileID: 582601643}
 --- !u!58 &2102930387
 CircleCollider2D:
   m_ObjectHideFlags: 0
