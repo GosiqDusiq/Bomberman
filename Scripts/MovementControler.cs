@@ -63,7 +63,7 @@ public class MovementControler : MonoBehaviour
         activeSpriteRenderer.idle = direction == Vector2.zero;
     }
 
-     private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Explosion")) {
             DeathSequence();
@@ -81,15 +81,11 @@ public class MovementControler : MonoBehaviour
         spriteRendererRight.enabled = false;
         spriteRendererDeath.enabled = true;
 
-        
-
         Invoke(nameof(OnDeathSequenceEnded), 1.25f);
     }
 
     private void OnDeathSequenceEnded()
     {
         gameObject.SetActive(false);
-        FindObjectOfType<GameManager>().CheckWinState();
     }
-
 }
