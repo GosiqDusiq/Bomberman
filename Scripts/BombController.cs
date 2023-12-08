@@ -2,10 +2,18 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
+<<<<<<< Updated upstream
 public class BombController : MonoBehaviour
 {
     [Header("Bomb")]
     public KeyCode inputKey = KeyCode.LeftShift;
+=======
+
+public class BombController : MonoBehaviour
+{
+    [Header("Bomb")]
+    public KeyCode inputKey = KeyCode.Space;
+>>>>>>> Stashed changes
     public GameObject bombPrefab;
     public float bombFuseTime = 3f;
     public int bombAmount = 1;
@@ -57,8 +65,13 @@ public class BombController : MonoBehaviour
         Explode(position, Vector2.left, explosionRadius);
         Explode(position, Vector2.right, explosionRadius);
 
+<<<<<<< Updated upstream
         Destroy(bomb.gameObject);
         bombsRemaining++;
+=======
+        Destroy(bomb);
+        bombsRemaining ++;
+>>>>>>> Stashed changes
     }
 
     private void Explode(Vector2 position, Vector2 direction, int length)
@@ -79,6 +92,10 @@ public class BombController : MonoBehaviour
         explosion.SetActiveRenderer(length > 1 ? explosion.middle : explosion.end);
         explosion.SetDirection(direction);
         explosion.DestroyAfter(explosionDuration);
+<<<<<<< Updated upstream
+=======
+        Destroy(explosion.gameObject, explosionDuration);
+>>>>>>> Stashed changes
 
         Explode(position, direction, length - 1);
     }
@@ -94,6 +111,7 @@ public class BombController : MonoBehaviour
             destructibleTiles.SetTile(cell, null);
         }
     }
+<<<<<<< Updated upstream
 
     public void AddBomb()
     {
@@ -108,4 +126,6 @@ public class BombController : MonoBehaviour
         }
     }
 
+=======
+>>>>>>> Stashed changes
 }

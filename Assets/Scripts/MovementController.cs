@@ -1,9 +1,9 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class MovementControler : MonoBehaviour
+public class MovementController : MonoBehaviour
 {
-    public new Rigidbody2D rigidbody { get; private set; }
+    private new Rigidbody2D rigidbody;
     private Vector2 direction = Vector2.down;
     public float speed = 5f;
 
@@ -20,7 +20,6 @@ public class MovementControler : MonoBehaviour
     public AnimatedSpriteRenderer spriteRendererRight;
     public AnimatedSpriteRenderer spriteRendererDeath;
     private AnimatedSpriteRenderer activeSpriteRenderer;
-
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
@@ -46,7 +45,7 @@ public class MovementControler : MonoBehaviour
     {
         Vector2 position = rigidbody.position;
         Vector2 translation = direction * speed * Time.fixedDeltaTime;
-    
+
         rigidbody.MovePosition(position + translation);
     }
 
@@ -63,7 +62,7 @@ public class MovementControler : MonoBehaviour
         activeSpriteRenderer.idle = direction == Vector2.zero;
     }
 
-     private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Explosion")) {
             DeathSequence();
@@ -80,8 +79,6 @@ public class MovementControler : MonoBehaviour
         spriteRendererLeft.enabled = false;
         spriteRendererRight.enabled = false;
         spriteRendererDeath.enabled = true;
-
-        
 
         Invoke(nameof(OnDeathSequenceEnded), 1.25f);
     }

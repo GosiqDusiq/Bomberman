@@ -11,6 +11,10 @@ public class Explosion : MonoBehaviour
         start.enabled = renderer == start;
         middle.enabled = renderer == middle;
         end.enabled = renderer == end;
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
     }
 
     public void SetDirection(Vector2 direction)
@@ -24,4 +28,8 @@ public class Explosion : MonoBehaviour
         Destroy(gameObject, seconds);
     }
 
+<<<<<<< Updated upstream
 }
+=======
+}
+>>>>>>> Stashed changes

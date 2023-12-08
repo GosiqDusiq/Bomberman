@@ -8,9 +8,15 @@ public class Explosion : MonoBehaviour
 
     public void SetActiveRenderer(AnimatedSpriteRenderer renderer)
     {
+<<<<<<< Updated upstream
         start.enabled = (renderer == start);
         middle.enabled = (renderer == middle);
         end.enabled = (renderer == end);
+=======
+        start.enabled = renderer == start;
+        middle.enabled = renderer == middle;
+        end.enabled = renderer == end;
+>>>>>>> Stashed changes
     }
 
     public void SetDirection(Vector2 direction)
@@ -19,7 +25,7 @@ public class Explosion : MonoBehaviour
         transform.rotation = Quaternion.AngleAxis(angle * Mathf.Rad2Deg, Vector3.forward);
     }
 
-    public void DestroyAfter(float seconds)
+    public void ClearAllTiles(float seconds)
     {
         Destroy(gameObject, seconds);
     }

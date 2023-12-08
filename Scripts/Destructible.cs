@@ -4,14 +4,18 @@ public class Destructible : MonoBehaviour
 {
     public float destructionTime = 1f;
 
+<<<<<<< Updated upstream
     [Range(0f, 1f)]
     public float itemSpawnChance = 0.2f;
     public GameObject[] spawnableItems;
 
+=======
+>>>>>>> Stashed changes
     private void Start()
     {
         Destroy(gameObject, destructionTime);
     }
+<<<<<<< Updated upstream
 
     private void OnDestroy()
     {
@@ -22,4 +26,6 @@ public class Destructible : MonoBehaviour
         }
     }
 
+=======
+>>>>>>> Stashed changes
 }

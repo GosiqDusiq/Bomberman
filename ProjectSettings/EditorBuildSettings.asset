@@ -6,6 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/MainMenu.unity
+    guid: 7d7afe3ad14644a469bbadbe9d101660
+  - enabled: 1
+    path: Assets/Scenes/bomberman.unity
+    guid: 81475ac75f63fb448b592277fdadc5c0
+  - enabled: 1
+    path: Assets/Scenes/bomberman2.unity
+    guid: 6c2630af21e172e4391e9b17ab2d5747
+  - enabled: 1
+    path: Assets/Scenes/bomberman3.unity
+    guid: 2eabd11a286ff874d936be62d74487aa
+  - enabled: 1
+    path: Assets/Scenes/bomberman4.unity
+    guid: c931a0296b66af54489d53e08ed20585
+  - enabled: 1
+    path: Assets/Scenes/bomberman5.unity
+    guid: 1c5547b43bb62bb40be89f7ef9119128
   m_configObjects: {}
