@@ -3,7 +3,9 @@ guid: 6cb16e973e4d2da42ab9e97bf84d34f7
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - destructiblePrefab: {fileID: 6105703869729892679, guid: 841fad381a7599144962d4258389b3f2, type: 3}
+  - destructibleTiles: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

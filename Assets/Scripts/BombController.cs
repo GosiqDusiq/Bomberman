@@ -1,6 +1,9 @@
 using System.Collections;
+using UnityEditor.VersionControl;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+
 
 public class BombController : MonoBehaviour
 {
@@ -40,6 +43,10 @@ public class BombController : MonoBehaviour
         position.y = Mathf.Round(position.y);
 
         GameObject bomb = Instantiate(bombPrefab, position, Quaternion.identity);
+        Debug.Log(bomb.GetComponent<Destructible>());
+        bomb.GetComponent<Destructible>().destructibleTiles = destructibleTiles;
+        Debug.Log(bomb.name);
+
         bombsRemaining--;
 
         yield return new WaitForSeconds(bombFuseTime);

@@ -8,15 +8,14 @@ public class Explosion : MonoBehaviour
 
     public void SetActiveRenderer(AnimatedSpriteRenderer renderer)
     {
-<<<<<<< Updated upstream
+
         start.enabled = (renderer == start);
         middle.enabled = (renderer == middle);
         end.enabled = (renderer == end);
-=======
+
         start.enabled = renderer == start;
         middle.enabled = renderer == middle;
         end.enabled = renderer == end;
->>>>>>> Stashed changes
     }
 
     public void SetDirection(Vector2 direction)

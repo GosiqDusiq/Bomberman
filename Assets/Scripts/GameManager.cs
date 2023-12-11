@@ -1,15 +1,23 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public GameObject[] players;
-<<<<<<< Updated upstream
-=======
     public GameObject[] stages;
-    [SerializeField]//to jest tablica przechowująca sceny (levele) w grze. w inspektorze musisz tam przypisać sceny, które chcesz aby się ładowały
-    private string[] levels;
->>>>>>> Stashed changes
+
+    private void Start()
+    {
+        // Start the initial round
+        NewRound();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R)) // This is for testing
+        {
+            NewRound();
+        }
+    }
 
     public void CheckWinState()
     {
@@ -17,40 +25,44 @@ public class GameManager : MonoBehaviour
 
         foreach (GameObject player in players)
         {
-            if (player.activeSelf) {
+            if (player.activeSelf)
+            {
                 aliveCount++;
             }
         }
 
-        if (aliveCount <= 1) {
-<<<<<<< Updated upstream
-            Invoke(nameof(NewRound), 3f);
-=======
-            Invoke(nameof(RandomizeStage), 3f);
->>>>>>> Stashed changes
+        if (aliveCount <= 1)
+        {
+          Invoke(nameof(NewRound), 3f);
         }
     }
 
     private void NewRound()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
+        // Turn off the previously active stage (if one was active)
+        DeactivateStage();
 
-<<<<<<< Updated upstream
-}
-=======
+        // Randomly choose a new stage
+        RandomizeStage();
+    }
 
     private void RandomizeStage()
     {
-        int randomIndex = Random.Range(0, levels.Length);
+        int randomIndex = Random.Range(0, stages.Length);
 
-        // Activate new scene based on the random index
-        ActivateScene(levels[randomIndex]);
+        // Activate new stage based on the random index
+        stages[randomIndex].SetActive(true);
     }
 
-    private void ActivateScene(string sceneName)
+    private void DeactivateStage()
     {
-        SceneManager.LoadSceneAsync(sceneName);
+        foreach (GameObject stage in stages)
+        {
+            if (stage.activeSelf)
+            {
+                stage.SetActive(false);
+                break;
+            }
+        }
     }
 }
->>>>>>> Stashed changes

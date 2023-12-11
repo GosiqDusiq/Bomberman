@@ -1,18 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
     public bool isPauseActive = false;
-    // Start is called before the first frame update
+
     void Start()
     {
-        
+        // Ensure the pause menu is initially inactive
+        if (pauseMenu != null)
+        {
+            pauseMenu.SetActive(false);
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -22,16 +23,33 @@ public class PauseMenu : MonoBehaviour
             else
                 Pause();
         }
-        
     }
+
     void Resume()
     {
-        pauseMenu.SetActive(false);
+        // Unpause the game
+        Time.timeScale = 1f;
+
+        // Deactivate the pause menu
+        if (pauseMenu != null)
+        {
+            pauseMenu.SetActive(false);
+        }
+
         isPauseActive = false;
     }
+
     void Pause()
     {
-        pauseMenu.SetActive(true);
+        // Pause the game
+        Time.timeScale = 0f;
+
+        // Activate the pause menu
+        if (pauseMenu != null)
+        {
+            pauseMenu.SetActive(true);
+        }
+
         isPauseActive = true;
     }
 }

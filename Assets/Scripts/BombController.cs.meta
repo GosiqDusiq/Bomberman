@@ -3,7 +3,11 @@ guid: e86f126f726d26e41a8b824e64d1f48b
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - bombPrefab: {fileID: 174461620021618582, guid: 126a4438e949b7648813a22206ff5642, type: 3}
+  - explosionPrefab: {fileID: 5411258218198933550, guid: 1b8ec0fd7fa078f489e82f68228b3a8e, type: 3}
+  - destructibleTiles: {instanceID: 0}
+  - destructiblePrefab: {fileID: 7563713636936604334, guid: 841fad381a7599144962d4258389b3f2, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
