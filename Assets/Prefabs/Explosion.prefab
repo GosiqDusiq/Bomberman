@@ -340,7 +340,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5411258218198933548}
   - component: {fileID: 5411258218198933551}
-  - component: {fileID: 5411258218198933550}
+  - component: {fileID: 4160327825192747216}
   m_Layer: 8
   m_Name: Explosion
   m_TagString: Untagged
@@ -392,7 +392,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.25, y: 0.25}
   m_EdgeRadius: 0
---- !u!114 &5411258218198933550
+--- !u!114 &4160327825192747216
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Explosion : MonoBehaviour
@@ -29,4 +30,8 @@ public class Explosion : MonoBehaviour
         Destroy(gameObject, seconds);
     }
 
+    internal void DestroyAfter(float explosionDuration)
+    {
+        throw new NotImplementedException();
+    }
 }

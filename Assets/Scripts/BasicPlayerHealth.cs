@@ -2,15 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IPlayerHealth
-{
-    void SetHealth(int health);
-    int GetHealth();
-}
+
 
 public class BasicPlayerHealth : MonoBehaviour, IPlayerHealth
 {
     private int health;
+    [Header("Health")]
+    public int HealthAmount = 1;
 
     public void SetHealth(int health)
     {
@@ -21,4 +19,9 @@ public class BasicPlayerHealth : MonoBehaviour, IPlayerHealth
     {
         return health;
     }
+}
+public interface IPlayerHealth
+{
+    void SetHealth(int health);
+    int GetHealth();
 }

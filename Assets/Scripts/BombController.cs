@@ -1,9 +1,6 @@
 using System.Collections;
-using UnityEditor.VersionControl;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-
 
 public class BombController : MonoBehaviour
 {
@@ -31,7 +28,8 @@ public class BombController : MonoBehaviour
 
     private void Update()
     {
-        if (bombsRemaining > 0 && Input.GetKeyDown(inputKey)) {
+        if (bombsRemaining > 0 && Input.GetKeyDown(inputKey))
+        {
             StartCoroutine(PlaceBomb());
         }
     }
@@ -43,10 +41,6 @@ public class BombController : MonoBehaviour
         position.y = Mathf.Round(position.y);
 
         GameObject bomb = Instantiate(bombPrefab, position, Quaternion.identity);
-        Debug.Log(bomb.GetComponent<Destructible>());
-        bomb.GetComponent<Destructible>().destructibleTiles = destructibleTiles;
-        Debug.Log(bomb.name);
-
         bombsRemaining--;
 
         yield return new WaitForSeconds(bombFuseTime);
@@ -57,7 +51,7 @@ public class BombController : MonoBehaviour
 
         Explosion explosion = Instantiate(explosionPrefab, position, Quaternion.identity);
         explosion.SetActiveRenderer(explosion.start);
-        explosion.ClearAllTiles(explosionDuration);
+        explosion.DestroyAfter(explosionDuration);
 
         Explode(position, Vector2.up, explosionRadius);
         Explode(position, Vector2.down, explosionRadius);
@@ -70,7 +64,8 @@ public class BombController : MonoBehaviour
 
     private void Explode(Vector2 position, Vector2 direction, int length)
     {
-        if (length <= 0) {
+        if (length <= 0)
+        {
             return;
         }
 
@@ -85,7 +80,7 @@ public class BombController : MonoBehaviour
         Explosion explosion = Instantiate(explosionPrefab, position, Quaternion.identity);
         explosion.SetActiveRenderer(length > 1 ? explosion.middle : explosion.end);
         explosion.SetDirection(direction);
-        explosion.ClearAllTiles(explosionDuration);
+        explosion.DestroyAfter(explosionDuration);
 
         Explode(position, direction, length - 1);
     }
@@ -110,7 +105,8 @@ public class BombController : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Bomb")) {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Bomb"))
+        {
             other.isTrigger = false;
         }
     }
